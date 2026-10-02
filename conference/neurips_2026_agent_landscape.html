@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NeurIPS 2026 Agent 研究方向统计与硕士选题建议</title>
+  <style>
+    :root{--ink:#172033;--muted:#657085;--paper:#f6f3ec;--card:#fff;--navy:#18314f;--cyan:#31a7a1;--amber:#e4a13b;--red:#c8584f;--line:#dde2e8}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.7 ui-sans-serif,system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+    a{color:#096b76;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#c8584f}.wrap{max-width:1180px;margin:auto;padding:0 30px}
+    header{background:linear-gradient(125deg,#142b47 0%,#1b4960 68%,#237e7a 100%);color:#fff;padding:62px 0 54px;position:relative;overflow:hidden}
+    header:after{content:"AGENT";position:absolute;right:-30px;bottom:-88px;font-weight:900;font-size:180px;letter-spacing:.04em;color:#fff;opacity:.045}
+    .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:12px;font-weight:800;color:#82d7d2}.hero h1{font-size:clamp(34px,5vw,62px);line-height:1.08;margin:12px 0 18px;max-width:860px}.hero p{max-width:820px;color:#d9e8ee;font-size:18px}
+    .stamp{display:inline-flex;gap:9px;align-items:center;border:1px solid #ffffff45;border-radius:999px;padding:7px 13px;font-size:12px}.dot{width:8px;height:8px;background:#f2b44e;border-radius:50%}
+    nav{position:sticky;top:0;z-index:4;background:#ffffffeb;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}nav .wrap{display:flex;gap:23px;overflow:auto;padding-top:12px;padding-bottom:12px;white-space:nowrap}nav a{text-decoration:none;font-size:13px;font-weight:700;color:#44516a}
+    main{padding:38px 0 70px}section{scroll-margin-top:70px;margin:0 0 52px}.section-title{display:flex;align-items:end;justify-content:space-between;border-bottom:2px solid var(--ink);margin-bottom:20px}.section-title h2{font-size:27px;margin:0 0 9px}.section-title span{font:12px ui-monospace,monospace;color:var(--muted);padding-bottom:12px}
+    .notice{background:#fff7df;border-left:5px solid var(--amber);padding:18px 20px;margin:0 0 26px}.notice strong{color:#7b4b00}.grid{display:grid;gap:16px}.kpis{grid-template-columns:repeat(4,1fr)}.kpi{background:var(--card);padding:22px;border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 28px #1720330b}.kpi b{font-size:32px;line-height:1;display:block;color:var(--navy)}.kpi span{display:block;color:var(--muted);margin-top:8px;font-size:13px}.kpi.accent{background:var(--navy);color:#fff}.kpi.accent b{color:#7edbd4}.kpi.accent span{color:#d7e4eb}
+    .ranking{background:#fff;border:1px solid var(--line);border-radius:16px;padding:25px}.rank{display:grid;grid-template-columns:34px 215px 1fr 54px;gap:12px;align-items:center;margin:14px 0}.rank .n{font:700 13px ui-monospace;color:var(--muted)}.rank .label{font-weight:750}.track{height:13px;background:#edf0f3;border-radius:10px;overflow:hidden}.fill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--navy),var(--cyan))}.rank .count{text-align:right;font:800 14px ui-monospace}.caption{font-size:12px;color:var(--muted);margin-top:15px}
+    .topics{grid-template-columns:repeat(2,1fr)}.topic{background:#fff;border:1px solid var(--line);border-top:5px solid var(--cyan);border-radius:13px;padding:23px}.topic h3{font-size:20px;margin:0 0 5px}.topic .tag{font:700 11px ui-monospace;color:#10736f;text-transform:uppercase}.topic p{margin:10px 0;color:#3f4a5d}.papers{padding:0;margin:12px 0 0 18px}.papers li{margin:7px 0}.prior{font-size:13px;background:#f3f6f7;padding:10px 12px;border-radius:8px;margin-top:13px}
+    .choices{grid-template-columns:repeat(2,1fr)}.choice{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;position:relative}.choice.best{border:2px solid var(--cyan)}.badge{display:inline-block;background:#d9f3ef;color:#075b57;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:800}.choice h3{margin:10px 0 4px;font-size:20px}.score{display:grid;grid-template-columns:70px 1fr 30px;gap:8px;align-items:center;font-size:12px;margin:8px 0}.meter{height:7px;background:#e8ebef;border-radius:8px}.meter i{display:block;background:var(--amber);height:100%;border-radius:8px}.choice ul{padding-left:18px}.choice li{margin:6px 0}.verdict{background:#eef7f6;border-radius:9px;padding:11px 13px;font-weight:650}
+    table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line)}th,td{text-align:left;vertical-align:top;padding:13px 15px;border-bottom:1px solid var(--line)}th{background:#edf1f3;font-size:12px;text-transform:uppercase;letter-spacing:.05em}td:first-child{font-weight:700}.yes{color:#08766d;font-weight:800}.mid{color:#9a6500;font-weight:800}
+    .method{grid-template-columns:1fr 1fr}.method>div{background:#fff;border:1px solid var(--line);padding:22px;border-radius:12px}.method h3{margin-top:0}.code{font:12px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;background:#152236;color:#dcecf3;border-radius:10px;padding:16px;overflow:auto}.sources li{margin:9px 0}.tiny{font-size:12px;color:var(--muted)}footer{background:#152236;color:#c9d4df;padding:26px 0;font-size:13px}
+    @media(max-width:850px){.kpis,.topics,.choices,.method{grid-template-columns:1fr 1fr}.rank{grid-template-columns:30px 1fr 45px}.rank .track{grid-column:2/4}.hero h1{font-size:38px}}
+    @media(max-width:580px){.wrap{padding:0 18px}.kpis,.topics,.choices,.method{grid-template-columns:1fr}.rank{grid-template-columns:28px 1fr 40px}.section-title span{display:none}}
+    @media print{nav{display:none}body{background:#fff}.topic,.choice,.kpi{break-inside:avoid}header{padding:35px 0}a{color:inherit}}
+  </style>
+</head>
+<body>
+<header><div class="wrap hero">
+  <div class="eyebrow">Master Thesis Intelligence Brief · 2026</div>
+  <h1>NeurIPS Agent 研究版图</h1>
+  <p>从“论文很多”走到“选题可做”：放榜次日的 2026 快照统计、研究主题地图、代表工作与偏工业落地的硕士选题建议。</p>
+  <div class="stamp"><i class="dot"></i>数据截点：2026-09-25 · Asia/Shanghai</div>
+</div></header>
+<nav><div class="wrap"><a href="#summary">结论</a><a href="#ranking">热门榜单</a><a href="#topics">Topic 地图</a><a href="#thesis">硕士选题</a><a href="#method">口径</a><a href="#sources">来源</a></div></nav>
+<main class="wrap">
+<section id="summary">
+  <div class="notice"><strong>先说清楚：</strong>NeurIPS 2026 已于 9 月 24 日通知作者，但官网公开录用页在本报告抓取时仍显示 <b>0 篇</b>，proceedings 尚未生成。网上流传的 7k 列表曾是 dev 站快照，不能等同最终录用名单。本报告因此把 2026 数字标为“候选快照”，用来判断趋势；不把它伪装成官方最终统计。正式引用时建议在官网列表发布后重跑。</div>
+  <div class="section-title"><h2>一页结论</h2><span>EXECUTIVE SUMMARY</span></div>
+  <div class="grid kpis">
+    <div class="kpi"><b>7,012</b><span>候选快照中的论文标题；不是官方最终录用总数</span></div>
+    <div class="kpi accent"><b>347</b><span>保守识别的现代 LLM / 多模态 Agent 论文</span></div>
+    <div class="kpi"><b>4.95%</b><span>Agent 核心论文占候选标题快照的比例</span></div>
+    <div class="kpi"><b>105</b><span>评价/Benchmark 相关，为最热子方向</span></div>
+  </div>
+  <p><b>最重要的判断：</b>Agent 研究已经从“把 ReAct 拼起来跑通 Demo”转向三个更硬的问题：<b>怎么评估真实长任务、怎么从轨迹中训练、怎么保证运行时安全可靠</b>。对硕士毕业论文，最优解通常不是训练大模型，而是围绕一个可复现环境，做 trace-level evaluation、故障检测/恢复或成本—质量路由。</p>
+</section>
+
+<section id="ranking">
+  <div class="section-title"><h2>热门方向榜单</h2><span>MULTI-LABEL · TITLE LEXICON</span></div>
+  <div class="ranking">
+    <div class="rank"><span class="n">01</span><span class="label">评价与 Benchmark</span><span class="track"><i class="fill" style="width:100%"></i></span><span class="count">105</span></div>
+    <div class="rank"><span class="n">02</span><span class="label">训练与自我改进</span><span class="track"><i class="fill" style="width:80%"></i></span><span class="count">84</span></div>
+    <div class="rank"><span class="n">03</span><span class="label">工具使用、规划、Web/GUI</span><span class="track"><i class="fill" style="width:70%"></i></span><span class="count">73</span></div>
+    <div class="rank"><span class="n">04</span><span class="label">记忆、上下文与长任务</span><span class="track"><i class="fill" style="width:61%"></i></span><span class="count">64</span></div>
+    <div class="rank"><span class="n">05</span><span class="label">安全、隐私与可靠性</span><span class="track"><i class="fill" style="width:59%"></i></span><span class="count">62</span></div>
+    <div class="rank"><span class="n">06</span><span class="label">多 Agent 与编排</span><span class="track"><i class="fill" style="width:45%"></i></span><span class="count">47</span></div>
+    <div class="rank"><span class="n">07</span><span class="label">Coding / 数据 / 科研应用</span><span class="track"><i class="fill" style="width:40%"></i></span><span class="count">42</span></div>
+    <div class="rank"><span class="n">08</span><span class="label">医疗/金融/工业等垂类</span><span class="track"><i class="fill" style="width:33%"></i></span><span class="count">35</span></div>
+    <p class="caption">注：方向为多标签，例：“Agentic Memory Engineering for Web Agents”同时计入记忆与工具/Web，故总和大于 347。数字由标题词表自动标注，适合看相对热度，不等价于全文人工审稿级分类。</p>
+  </div>
+</section>
+
+<section id="topics">
+  <div class="section-title"><h2>学术界在研究什么</h2><span>TOPICS & REPRESENTATIVE WORK</span></div>
+  <div class="grid topics">
+    <article class="topic"><span class="tag">105 papers · #1</span><h3>1. 评价：从“最终答对”到“过程可信”</h3><p>研究重点是长时程、动态环境、真实软件/网页、可验证结果，以及轨迹级失败归因。难点不再只是做数据集，而是避免污染、处理环境漂移，并让 verifier 真能反映业务成功。</p><ul class="papers"><li><a href="https://neurips.cc/virtual/2026/poster/139495">Can Agent Benchmarks Support Their Scores?</a></li><li><a href="https://neurips.cc/virtual/2026/poster/138856">AgentPulse: Evaluating AI Agents in Deployment</a></li><li><a href="https://neurips.cc/virtual/2026/poster/142192">Claw-Eval-Live: A Live Agent Benchmark</a></li></ul><div class="prior">入门代表：<a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/4410c0711e9154a7a2d26f9b3816d1ef-Abstract-Conference.html">WebArena (ICLR 2024)</a>、<a href="https://proceedings.iclr.cc/paper_files/paper/2024/hash/edac78c3e300629acfe6cbe9ca88fb84-Abstract-Conference.html">SWE-bench (ICLR 2024)</a>。</div></article>
+    <article class="topic"><span class="tag">84 papers · #2</span><h3>2. 训练：轨迹、过程奖励与自我改进</h3><p>把 agent 的多步交互轨迹转成训练信号：RL、过程奖励、失败轨迹学习、经验回放、技能发现和合成数据。核心矛盾是长 horizon 的信用分配、奖励作弊与昂贵环境交互。</p><ul class="papers"><li><a href="https://neurips.cc/virtual/2026/poster/143838">Agentic-DPO</a></li><li><a href="https://neurips.cc/virtual/2026/poster/140520">Beyond Outcome Rewards</a></li><li><a href="https://neurips.cc/virtual/2026/poster/140965">AlphaSkill: Self-evolving Skills</a></li></ul><div class="prior">建议基础：先理解行为克隆、PPO/GRPO、过程监督；再复现一个小模型 agent 的离线轨迹学习，别从昂贵在线 RL 起步。</div></article>
+    <article class="topic"><span class="tag">73 papers · #3</span><h3>3. 工具使用、规划与 Computer Use</h3><p>让模型决定何时调用哪种工具、如何填参数、观察结果后如何重规划。2026 趋势是从文本 API 扩展到 GUI、代码仓库和混合模态环境，重视依赖关系、状态管理与终止判断。</p><ul class="papers"><li><a href="https://neurips.cc/virtual/2026/poster/143497">CODA: Dual-Brain Computer Use Agent</a></li><li><a href="https://neurips.cc/virtual/2026/poster/141650">Agentic Planning under Dependency-Preserving Augmentation</a></li><li><a href="https://neurips.cc/virtual/2026/poster/143879">AgentEscapeBench</a></li></ul><div class="prior">入门代表：<a href="https://research.google/blog/react-synergizing-reasoning-and-acting-in-language-models/">ReAct (ICLR 2023)</a> 与 <a href="https://proceedings.neurips.cc/paper/2023/hash/d842425e4bf79ba039352da0f658a906-Abstract-Conference.html">Toolformer (NeurIPS 2023)</a>。</div></article>
+    <article class="topic"><span class="tag">64 papers · #4</span><h3>4. Memory 与长时程状态</h3><p>不只是向量库：研究写入/检索/压缩/遗忘策略，情景记忆与技能记忆的分工，跨任务记忆污染，以及“记住了但行为没更新”。工业上直接对应上下文成本和重复工作。</p><ul class="papers"><li><a href="https://neurips.cc/virtual/2026/poster/137794">Agentic Memory Engineering</a></li><li><a href="https://neurips.cc/virtual/2026/poster/143096">EvolveMem</a></li><li><a href="https://neurips.cc/virtual/2026/poster/142400">Auto-Dreamer: Offline Memory Consolidation</a></li></ul><div class="prior">好的研究问题不是“加 memory 是否涨分”，而是固定 token/延迟预算下，哪种写入和淘汰策略改善长期任务成功率。</div></article>
+    <article class="topic"><span class="tag">62 papers · #5</span><h3>5. 安全、隐私与运行时可靠性</h3><p>Prompt injection、恶意工具、越权、隐私泄漏、虚假完成、不可逆动作、监控与可恢复执行。产业真正关心的是部署时的 capability control 和审计证据，而不只是拒答率。</p><ul class="papers"><li><a href="https://neurips.cc/virtual/2026/poster/140973">Auditing Agent Harness Safety</a></li><li><a href="https://neurips.cc/virtual/2026/poster/137778">AttChain: Hijacking Agent Tool Chain</a></li><li><a href="https://neurips.cc/virtual/2026/poster/139508">Learned Capability Governance</a></li></ul><div class="prior">强选题形态：威胁模型 + 可复现实验环境 + 攻击集 + 防御 + 效用/成本副作用，而非只做 prompt 分类。</div></article>
+    <article class="topic"><span class="tag">47 papers · #6</span><h3>6. 多 Agent：何时协作，何时只是更贵</h3><p>研究角色分工、路由、通信、冲突和共识失败。热点正从固定角色 prompt 转向动态团队与资源分配；关键 baseline 必须包含“同等 token 的单 Agent”，否则收益可能仅来自更多采样。</p><ul class="papers"><li><a href="https://neurips.cc/virtual/2026/poster/142023">Latent Multi-Agent Collaboration</a></li><li><a href="https://neurips.cc/virtual/2026/poster/138455">False Convergence in Multi-Agent LLMs</a></li><li><a href="https://neurips.cc/virtual/2026/poster/142074">Evolving Agent Teams</a></li></ul><div class="prior">适合做系统/算法，但不建议把“多 Agent 框架搭建”本身当创新；需要成本控制、消融与失败机制分析。</div></article>
+  </div>
+</section>
+
+<section id="thesis">
+  <div class="section-title"><h2>推荐的硕士论文方向</h2><span>FEASIBILITY × INDUSTRY VALUE</span></div>
+  <div class="grid choices">
+    <article class="choice best"><span class="badge">首推 · 论文与求职兼顾</span><h3>Agent 轨迹级故障检测与自动恢复</h3><p>面向 coding/web/data agent，把失败定位到 observation、plan、tool call、verification 或 termination，并触发最小成本恢复。</p><div class="score"><span>可做性</span><span class="meter"><i style="width:90%"></i></span><b>9</b></div><div class="score"><span>工业价值</span><span class="meter"><i style="width:95%"></i></span><b>10</b></div><ul><li><b>研究问题：</b>仅用 trace 能否早于最终失败检测？哪种恢复策略在固定预算下最好？</li><li><b>最小交付：</b>1 个 benchmark、失败 taxonomy、检测器、replay/replan/ask-human 三类恢复。</li><li><b>亮点：</b>可与 observability、SRE、评测平台直接衔接。</li></ul><div class="verdict">建议范围：选一个环境（SWE-bench 子集或自建可验证数据任务），不要横跨所有 Agent。</div></article>
+    <article class="choice"><span class="badge">高性价比</span><h3>成本约束下的动态模型/工具路由</h3><p>根据任务状态选择小/大模型、检索、代码执行或人工确认，在成功率、token、延迟之间做 Pareto 优化。</p><div class="score"><span>可做性</span><span class="meter"><i style="width:88%"></i></span><b>9</b></div><div class="score"><span>工业价值</span><span class="meter"><i style="width:92%"></i></span><b>9</b></div><ul><li>对比固定路由、置信度路由、contextual bandit。</li><li>指标必须含 task success、p95 latency、美元成本与失败风险。</li><li>可用开源小模型 + 少量商业 API，算力要求较低。</li></ul><div class="verdict">论文贡献要落在“状态表征/在线决策/不确定性”，不是写一套 if-else。</div></article>
+    <article class="choice"><span class="badge">稳健 · 易落地</span><h3>预算感知的长期记忆写入与淘汰</h3><p>研究什么值得记、何时压缩或遗忘，并防止错误经验污染；用持续变化任务而非静态 QA 评测。</p><div class="score"><span>可做性</span><span class="meter"><i style="width:86%"></i></span><b>9</b></div><div class="score"><span>工业价值</span><span class="meter"><i style="width:82%"></i></span><b>8</b></div><ul><li>建立“信息效用 × 新鲜度 × 风险 × token 成本”的写入分数。</li><li>设计概念漂移和矛盾更新测试。</li><li>baseline：全文上下文、RAG、摘要、LRU、反思式记忆。</li></ul><div class="verdict">不要只做新的向量检索公式；长期状态更新与可撤销性更有价值。</div></article>
+    <article class="choice"><span class="badge">安全方向</span><h3>Tool-use Agent 的最小权限与运行时策略</h3><p>根据当前计划动态授予最小工具能力，对高风险动作做 typed contract、dry-run 或 human-in-the-loop。</p><div class="score"><span>可做性</span><span class="meter"><i style="width:75%"></i></span><b>8</b></div><div class="score"><span>工业价值</span><span class="meter"><i style="width:95%"></i></span><b>10</b></div><ul><li>威胁：间接 prompt injection、参数越权、工具链投毒。</li><li>测量：攻击成功率、正常任务保留率、额外延迟与人工打断率。</li><li>适合安全/系统背景，有明确工程产物。</li></ul><div class="verdict">范围控制在一种工具环境；完整企业权限系统对硕士论文过大。</div></article>
+  </div>
+  <h3 style="margin-top:32px">横向比较</h3>
+  <table><thead><tr><th>方向</th><th>算力</th><th>数据/环境</th><th>论文风险</th><th>工业关心</th></tr></thead><tbody>
+    <tr><td>轨迹故障检测与恢复</td><td>低—中</td><td>可用公开任务，自产失败轨迹</td><td>中</td><td class="yes">非常高</td></tr>
+    <tr><td>动态模型/工具路由</td><td>低—中</td><td>需多模型 API 或本地模型</td><td>中</td><td class="yes">非常高</td></tr>
+    <tr><td>长期记忆管理</td><td>中</td><td>需构造时间变化任务</td><td>中</td><td class="yes">高</td></tr>
+    <tr><td>最小权限与运行时安全</td><td>低</td><td>需威胁模型与沙箱</td><td>中—高</td><td class="yes">非常高</td></tr>
+    <tr><td>从头做 Agentic RL</td><td>高</td><td>大量可验证交互轨迹</td><td>高</td><td class="mid">高，但不适合多数硕士</td></tr>
+    <tr><td>固定角色多 Agent Demo</td><td>中</td><td>容易</td><td>高（创新弱）</td><td class="mid">一般</td></tr>
+  </tbody></table>
+</section>
+
+<section id="method">
+  <div class="section-title"><h2>统计方法与限制</h2><span>REPRODUCIBILITY NOTES</span></div>
+  <div class="grid method"><div><h3>两层口径</h3><ol><li><b>母集：</b>公开快照中 7,012 个指向 NeurIPS 2026 virtual poster/oral/spotlight 的标题。</li><li><b>核心集：</b>标题明确包含 agentic，或同时出现 LLM/AI/VLM/Web/Coding/GUI 与 agent，或出现 agent memory / workflow / harness / benchmark 等现代 Agent 语义。</li><li><b>排除：</b>标题仅表示 classical multi-agent RL、经济主体、生物 agent、一般控制系统者；边界项采取保守排除。</li><li><b>子方向：</b>对 347 篇核心集做可重叠关键词标签。</li></ol></div><div><h3>为什么不报“官方 7,900”</h3><p>第三方页面声称 30,709 投稿、7,900 录用，但截至截点，NeurIPS 官方公开页没有给出可核验的最终总表。用户听到的“3 万篇中了 6k–7k”数量级合理，但严肃报告不应把未经官方确认的数字写成事实。</p><p>因此本页只用 7,012 快照作趋势抽样，并同时给出 2025 官方已确认基线：主赛道 21,575 篇有效投稿、5,290 篇录用（24.5%）。</p></div></div>
+  <h3>复现规则（简写）</h3><pre class="code">core = title matches (
+  "agentic" OR "AI/LLM/VLM/multimodal/web/coding/GUI agent" OR
+  "agent + {memory, benchmark, workflow, harness, safety, planning, ...}"
+)
+direction_count = count(core titles matching each direction lexicon)
+# multi-label; snapshot date = 2026-09-25</pre>
+  <p class="tiny">限制：标题法会漏掉标题不含 agent、但摘要实质研究 agent 的论文，也可能保留少量同名异义项；快照在正式 decisions/proceedings 前出现，可能包含后续变更。其价值是快速把握“研究在卷什么”，不是替代官方 bibliometrics。</p>
+</section>
+
+<section id="sources">
+  <div class="section-title"><h2>来源与阅读入口</h2><span>PRIMARY SOURCES FIRST</span></div>
+  <ul class="sources">
+    <li><a href="https://neurips.cc/Conferences/2026/AcceptedPapersInitial">NeurIPS 2026 官方 Accepted Papers 页面</a>：截至抓取时为 0，证明最终公开列表尚未就绪。</li>
+    <li><a href="https://neurips.cc/Conferences/2026/CallForEvaluationsDatasets">NeurIPS 2026 E&amp;D Track Call</a>：官方通知日 2026-09-24。</li>
+    <li><a href="https://blog.neurips.cc/2025/09/30/reflections-on-the-2025-review-process-from-the-program-committee-chairs/">NeurIPS 2025 PC Chairs 复盘</a>：21,575 有效投稿、5,290 录用。</li>
+    <li><a href="https://github.com/MTDickens/NIPS26-exposed">2026 dev 站候选快照存档</a>：本页 7,012 标题母集；非官方最终结果，使用时必须带限定。</li>
+    <li><a href="https://developers.openai.com/api/docs/guides/agents/sdk">OpenAI Agents 文档</a> 与 <a href="https://openai.com/index/introducing-the-agents-api/">Agents API 发布说明</a>：显示工业平台重点在工具、持久状态、编排、沙箱、guardrails 与 tracing。</li>
+    <li><a href="https://metr.org/time-horizons/">METR Task-Completion Time Horizons</a>：以可完成任务的人类耗时刻画 agent 长任务能力，是比静态 QA 更贴近部署的评测思路。</li>
+    <li><a href="https://github.blog/news-insights/octoverse/the-new-identity-of-a-developer-what-changes-and-what-doesnt-in-the-ai-era/">GitHub：AI 时代开发者角色变化</a>：coding agent 已产生大规模真实 PR，支持“软件工程 Agent”工业价值判断。</li>
+    <li><a href="https://www.anthropic.com/research/economic-index-june-2026-report">Anthropic Economic Index 2026</a>：使用形态正转向长时间 agentic tasks，且 coding 等任务突出。</li>
+  </ul>
+</section>
+</main>
+<footer><div class="wrap">NeurIPS Agent Landscape · 面向毕业选题的快速研究简报 · 生成于 2026-09-25</div></footer>
+</body></html>
